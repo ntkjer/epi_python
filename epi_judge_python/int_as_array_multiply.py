@@ -5,41 +5,21 @@ from test_framework import generic_test
 
 def multiply(num1: List[int], num2: List[int]) -> List[int]:
 
-    # [1, 4]
-    # [1, 2]
+    sign = -1 if (num1[0] < 0) ^ (num2[0] < 0) else 1
+    num1[0], num2[0] = abs(num1[0]), abs(num2[0])
 
+    result = [0] * (len(num1) + len(num2))
+    for i in reversed(range(len(num1))):
+        for j in reversed(range(len(num2))):
+            result[i + j + 1] += num1[i] * num2[j]
+            result[i + j] += result[i + j + 1] // 10
+            result[i + j + 1] %= 10
 
-    # 1.
-    # [2, 8]
-    # [1, 4]
-    # [3, 12] or [4, 9]
-    # [4, 2]
+    # remove leading zeroes
+    result = result[next((i for i, x in enumerate(result)
+                          if x != 0), len(result)):] or [0]
 
-    # add last numbers
-    # if over 9, save 9 as A[i]
-    # append the sum, as if base 10 was not a boundary (e.g. 12)
-    # [3, 9, 2]
-
-    # [1, 2, 3]
-    # [1, 8]
-
-    # [ 8, 16, 24]
-    # [ 1, 2 , 3]
-
-    # [9, 18, 27]
-    # reduce
-    # [9 + 1, 9 + 2, 9, 7]
-    # reduce
-    # [10 + 1, 1 ,9 , 7]
-    # reduce
-    # [1, , 1, 9, 7]
-
-
-    choice = num1
-    if len(num1) <= len(num2):
-        choice = num2
-
-    return []
+    return [sign * result[0]] + result[1:]
 
 
 if __name__ == '__main__':
