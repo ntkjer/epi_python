@@ -4,15 +4,15 @@ from test_framework import generic_test
 
 
 def can_reach_end(A: List[int]) -> bool:
-    solved = len(A) - 1
-    max_moves = 0
+    last_index, reachable_moves = len(A) - 1, 0
     i = 0
-    while i <= max_moves and max_moves < solved:
-        if i + A[i] > max_moves:
-            max_moves = i + A[i]
-            # max_moves = max(max_moves, A[i] + 1)
+    while i <= reachable_moves and reachable_moves < last_index:
+        if i + A[i] > reachable_moves:
+            reachable_moves = i + A[i]
+        # reachable_moves = max(reachable_moves, A[i] + 1)
         i += 1
-    return max_moves >= solved
+
+    return reachable_moves >= last_index
 
 
 if __name__ == '__main__':
