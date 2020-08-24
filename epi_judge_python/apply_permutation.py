@@ -2,6 +2,7 @@ from typing import List
 
 from test_framework import generic_test
 
+
 def apply_permutation_bf(perm: List[int], A: List[int]) -> None:
     assert(len(perm) == len(A))
     result = [0] * len(A)
