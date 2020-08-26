@@ -9,9 +9,15 @@ from test_framework.random_sequence_checker import (
 from test_framework.test_utils import enable_executor_hook
 
 
+import random
+
+
 def compute_random_permutation(n: int) -> List[int]:
-    # TODO - you fill in here.
-    return []
+    perms = list(range(n))
+    for i in range(n):
+        r = random.randint(i, len(perms) - 1)
+        perms[i], perms[r] = perms[r], perms[i]
+    return perms
 
 
 @enable_executor_hook
