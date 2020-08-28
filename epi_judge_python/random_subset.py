@@ -1,5 +1,5 @@
 import functools
-from typing import List
+from typing import List, Dict
 
 from test_framework import generic_test
 from test_framework.random_sequence_checker import (
@@ -7,10 +7,32 @@ from test_framework.random_sequence_checker import (
     compute_combination_idx, run_func_with_retries)
 from test_framework.test_utils import enable_executor_hook
 
+import random
+
+
+def random_subset_2(n: int, k: int) -> List[int]:
+    """
+    book solution
+    """
+    modified_elems: Dict[int, int] = {}
+    for i in range(k):
+        random_idx = random.randrange(i, n)  # generate [1, n-1]
+        random_val = modified_elems.get(random_idx, random_idx)
+        curr_val = modified_elems.get(i, i)
+        modified_elems[random_idx] = curr_val
+        modified_elems[i] = random_val
+    return [modified_elems[i] for i in range(k)]
+
 
 def random_subset(n: int, k: int) -> List[int]:
-    # TODO - you fill in here.
-    return []
+    result = {}
+    for i in range(k):
+        r_idx = random.randrange(i, n)
+        r_val = result.get(r_idx, r_idx)
+        i_val = result.get(i, i)
+        result[r_idx] = i_val
+        result[i] = r_val
+    return [result[i] for i in range(k)]
 
 
 @enable_executor_hook
