@@ -55,18 +55,18 @@ def is_valid_sudoku(partial_assignment: List[List[int]]) -> bool:
 
     n = len(partial_assignment)
     # check rows and columns
-    if any (
+    if any(
         has_duplicate([partial_assignment[i][j] for j in range(n)])
         or has_duplicate([partial_assignment[j][i] for j in range(n)])
-        for i in range(n)):
+            for i in range(n)):
         return False
 
     region_size = int(math.sqrt(n))
     return all(not has_duplicate([
         partial_assignment[a][b]
-        for a in range(region_size * I, region_size * (I + 1))
-        for b in range(region_size * J, region_size * (J + 1))
-    ]) for I in range(region_size) for J in range(region_size))
+        for a in range(region_size * h, region_size * (h + 1))
+        for b in range(region_size * k, region_size * (k + 1))
+    ]) for h in range(region_size) for k in range(region_size))
 
 
 
