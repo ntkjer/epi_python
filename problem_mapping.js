@@ -504,7 +504,7 @@ problem_mapping = {
                 "total": 20001
             },
             "Python: convert_base.py": {
-                "passed": 0,
+                "passed": 20001,
                 "total": 20001
             }
         },
@@ -588,7 +588,7 @@ problem_mapping = {
                 "total": 3999
             },
             "Python: roman_to_integer.py": {
-                "passed": 0,
+                "passed": 3999,
                 "total": 3999
             }
         },
@@ -602,7 +602,7 @@ problem_mapping = {
                 "total": 10008
             },
             "Python: valid_ip_addresses.py": {
-                "passed": 0,
+                "passed": 10008,
                 "total": 10008
             }
         },
@@ -616,7 +616,7 @@ problem_mapping = {
                 "total": 500
             },
             "Python: snake_string.py": {
-                "passed": 0,
+                "passed": 500,
                 "total": 500
             }
         },
@@ -630,7 +630,7 @@ problem_mapping = {
                 "total": 200
             },
             "Python: run_length_compression.py": {
-                "passed": 0,
+                "passed": 200,
                 "total": 200
             }
         },
@@ -644,7 +644,7 @@ problem_mapping = {
                 "total": 835
             },
             "Python: substring_match.py": {
-                "passed": 0,
+                "passed": 835,
                 "total": 835
             }
         }
@@ -684,7 +684,7 @@ problem_mapping = {
                 "total": 504
             },
             "Python: search_in_list.py": {
-                "passed": 0,
+                "passed": 505,
                 "total": 505
             }
         },
