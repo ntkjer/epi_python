@@ -5,6 +5,7 @@ from test_framework import generic_test
 
 import collections
 
+
 def binary_tree_depth_order(tree: BinaryTreeNode) -> List[List[int]]:
     result: List[List[int]] = []
     if not tree:
