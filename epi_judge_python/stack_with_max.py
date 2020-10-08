@@ -1,23 +1,55 @@
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
+from typing import List
 
+import collections
 
+#class Stack:
+#    ElementWithCachedMax = collections.namedtuple('ElementWithCachedMax',
+#                                                  ('element', 'max'))
+#
+#    def __init__(self) -> None:
+#        self._element_with_cached_max : List[Stack.ElementWithCachedMax] = []
+#
+#    def empty(self) -> bool:
+#        return len(self._element_with_cached_max) == 0
+#
+#    def max(self) -> int:
+#        return self._element_with_cached_max[-1].max
+#
+#    def pop(self) -> int:
+#        return self._element_with_cached_max.pop().element
+#
+#    def push(self, x: int) -> None:
+#        self._element_with_cached_max.append(
+#            self.ElementWithCachedMax(
+#                x, x if self.empty() else max(x, self.max())))
+#        return
+#
 class Stack:
+
+    # store curr val and curr max at each point
+    def __init__(self) -> None:
+        self.stack = []
+
     def empty(self) -> bool:
-        # TODO - you fill in here.
-        return True
+        return len(self.stack) == 0
 
     def max(self) -> int:
-        # TODO - you fill in here.
-        return 0
-
-    def pop(self) -> int:
-        # TODO - you fill in here.
-        return 0
+        if self.empty():
+            raise IndexError("empty stack has no max")
+        return self.stack[-1][1]
 
     def push(self, x: int) -> None:
-        # TODO - you fill in here.
-        return
+        if self.empty():
+            self.stack.append((x, x))
+        else:
+            self.stack.append((x, max(x, self.max())))
+
+    def pop(self) -> int:
+        if not self.empty():
+            return self.stack.pop()[0]
+        raise IndexError("empty stack cant pop")
 
 
 def stack_tester(ops):

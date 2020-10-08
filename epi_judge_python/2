@@ -1,0 +1,43 @@
+from typing import Optional
+
+from list_node import ListNode
+from test_framework import generic_test
+
+def add_two_numbers(L1: ListNode, L2: ListNode) -> Optional[ListNode]:
+    L = ListNode()
+    if not (L1 and L2):
+        return L
+    if L1 and not L2:
+        return L1
+    if L2 and not L1:
+        return L2
+
+    i = 0
+    while L1 or L2:
+        pos = (10 ** i)
+        if L1 and not L2:
+            current = L1.data
+        elif L2 and not L1:
+            current = L2.data
+        else:
+            current = L1.data + L2.data
+        current = current * pos
+        remainder = current // pos
+
+        if L1 and not L2:
+            L1 = L1.next
+        elif L2 and not L1:
+            L2 = L2.next
+        else:
+            L1, L2 = (L1.next, L2.next)
+
+        i += 1
+
+
+    return L.next
+
+
+if __name__ == '__main__':
+    exit(
+        generic_test.generic_test_main('int_as_list_add.py',
+                                       'int_as_list_add.tsv', add_two_numbers))
