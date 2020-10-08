@@ -10,6 +10,8 @@ class Queue:
         self._entries = [0] * capacity
         self._head = self._tail = self._num_queue_elems = 0
 
+
+
     def enqueue(self, x: int) -> None:
         # Check for resize
         if self._num_queue_elems == len(self._entries):
