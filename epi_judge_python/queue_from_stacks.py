@@ -1,25 +1,24 @@
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 
-import collections
-
-from typing import Deque
+from typing import List
 
 
 class Queue:
 
     def __init__(self) -> None:
-        self._data: Deque[int] = collections.deque()
-
-    def enqueue(self, x: int) -> None:
-        self._data.append(x)
+        self._deq: List[int] = []
+        self._enq: List[int] = []
         return
 
-    def dequeue(self) -> int:
-        return self._data.popleft()
+    def enqueue(self, x: int) -> None:
+        self._enq.append(x)
 
-    def max(self) -> int:
-        return max(self._data)
+    def dequeue(self) -> int:
+        if not self._deq:
+            while self._enq:
+                self._deq.append(self._enq.pop())
+        return self._deq.pop()
 
 
 def queue_tester(ops):
