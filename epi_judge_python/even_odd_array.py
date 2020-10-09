@@ -15,7 +15,7 @@ def even_odd(A: List[int]) -> None:
         else:
             A[next_even], A[next_odd] = A[next_odd], A[next_even]
             next_odd -= 1
-    return A
+    return
 
 
 @enable_executor_hook

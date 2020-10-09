@@ -2,22 +2,30 @@ from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 
 import collections
-import math
+from typing import Deque
 
 class QueueWithMax:
 
     def __init__(self) -> None:
-        self._entries = collections.deque()
-        self._max = -math.inf
+        self._entries: Deque[any] = collections.deque()
+        self._max_candidates: Deque[any] = collections.deque()
 
     def enqueue(self, x: int) -> None:
         self._entries.append(x)
-        if not self._entries:
-            self._max = x
-        else:
-            self._max = max(x, self._max)
+        while self._max_candidates and self._max_candidates[-1] < x:
+            self._max_candidates.pop()
+        self._max_candidates.append(x)
 
     def dequeue(self) -> int:
+        if self._entries:
+            result = self._entries.popleft()
+            if result is self._max_candidates[0]:
+                self._max_candidates.popleft()
+            return result
+        raise ValueError('empty queue.')
+
+
+    def dequeue_brute_force(self) -> int:
         """
         Brute force O(m) where m is the number of
         queued items we check to update new max.
@@ -39,7 +47,7 @@ class QueueWithMax:
     def max(self) -> int:
         if self.empty():
             raise IndexError("Empty Queue has no max")
-        return self._max
+        return self._max_candidates[0]
 
 
 def queue_tester(ops):
