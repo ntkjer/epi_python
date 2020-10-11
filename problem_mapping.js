@@ -1024,7 +1024,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Python: is_tree_symmetric.py": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             }
         },
@@ -1038,7 +1038,7 @@ problem_mapping = {
                 "total": 948
             },
             "Python: lowest_common_ancestor.py": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             }
         },
