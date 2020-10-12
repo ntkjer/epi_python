@@ -16,8 +16,20 @@ class BinaryTreeNode:
 
 def find_kth_node_binary_tree(tree: BinaryTreeNode,
                               k: int) -> Optional[BinaryTreeNode]:
-    # TODO - you fill in here.
-    return None
+    while tree:
+        left_size = tree.left.size if tree.left else 0
+        if left_size + 1 < k:
+            # K-th node must be in right subtree
+            k -= left_size + 1
+            tree = tree.right
+        elif left_size == k - 1:
+            # k-th element is tree and we are done
+            return tree
+        else:
+            #k-th node is in left subtree of current tree
+            tree = tree.left
+
+    return None  # if k is between 1 and tree size, unreachable
 
 
 @enable_executor_hook
