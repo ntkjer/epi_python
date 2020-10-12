@@ -9,14 +9,17 @@ from test_framework.test_utils import enable_executor_hook
 
 def find_successor(node: BinaryTreeNode) -> Optional[BinaryTreeNode]:
     if node.right:
+        # Successor is leftmost element in node's right subtree
         node = node.right
         while node.left:
             node = node.left
         return node
-    # Find the closest ancestor whose left subtree contains node
+
+    # find the closest ancestor whose left subtree contains node
     while node.parent and node.parent.right is node:
         node = node.parent
 
+    # A return val of none means that the node is the rightmost in the tree
     return node.parent
 
 
