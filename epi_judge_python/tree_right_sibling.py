@@ -13,8 +13,17 @@ class BinaryTreeNode:
 
 
 def construct_right_sibling(tree: BinaryTreeNode) -> None:
-    # TODO - you fill in here.
-    return
+    def populate_children_next_field(start_node):
+        while start_node and start_node.left:
+            # pop left childs next field
+            start_node.left.next = start_node.right
+            #pop right childs next field if start is not the last node at level
+            start_node.right.next = start_node.next and start_node.next.left
+            start_node = start_node.next
+
+    while tree and tree.left:
+        populate_children_next_field(tree)
+        tree = tree.left
 
 
 def traverse_next(node):

@@ -1206,7 +1206,7 @@ problem_mapping = {
                 "total": 10
             },
             "Python: tree_right_sibling.py": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             }
         }
@@ -1236,7 +1236,7 @@ problem_mapping = {
                 "total": 203
             },
             "Python: sort_increasing_decreasing_array.py": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             }
         },
@@ -1250,7 +1250,7 @@ problem_mapping = {
                 "total": 101
             },
             "Python: sort_almost_sorted_array.py": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             }
         },
