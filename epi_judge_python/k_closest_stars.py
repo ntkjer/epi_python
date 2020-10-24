@@ -1,6 +1,8 @@
 import functools
 import math
-from typing import Iterator, List
+import heapq
+
+from typing import Iterator, List, Tuple
 
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
@@ -28,8 +30,12 @@ class Star:
 
 
 def find_closest_k_stars(stars: Iterator[Star], k: int) -> List[Star]:
-    # TODO - you fill in here.
-    return []
+    max_heap: List[Tuple[float, str]] = []
+    for star in stars:
+        heapq.heappush(max_heap, (-star.distance, star))
+        if len(max_heap) == k + 1:
+            heapq.heappop(max_heap)
+    return [s[1] for s in heapq.nlargest(k , max_heap)]
 
 
 def comp(expected_output, output):

@@ -6,6 +6,7 @@ import heapq
 
 def merge_sorted_arrays(sorted_arrays: List[List[int]]) -> List[int]:
     min_heap: List[Tuple[int, int]] = []
+    # unpacking iters is O(1)
     sorted_arrays_iter = [iter(x) for x in sorted_arrays]
 
     # put first element from each iter in min_heap

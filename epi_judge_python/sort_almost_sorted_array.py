@@ -2,7 +2,7 @@ from typing import Iterator, List
 
 from test_framework import generic_test
 
-import heapq, itertools
+import heapq, itertools, time
 
 def sort_approximately_sorted_array(sequence: Iterator[int],
                                     k: int) -> List[int]:
