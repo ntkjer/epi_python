@@ -1420,7 +1420,7 @@ problem_mapping = {
                 "total": 100
             },
             "Python: absent_value_array.py": {
-                "passed": 0,
+                "passed": 100,
                 "total": 100
             }
         },
@@ -1434,7 +1434,7 @@ problem_mapping = {
                 "total": 50
             },
             "Python: search_for_missing_element.py": {
-                "passed": 0,
+                "passed": 50,
                 "total": 50
             }
         }
@@ -1450,7 +1450,7 @@ problem_mapping = {
                 "total": 9
             },
             "Python: anagrams.py": {
-                "passed": 0,
+                "passed": 9,
                 "total": 9
             }
         },
@@ -1464,7 +1464,7 @@ problem_mapping = {
                 "total": 305
             },
             "Python: is_string_permutable_to_palindrome.py": {
-                "passed": 0,
+                "passed": 305,
                 "total": 305
             }
         },
@@ -1478,7 +1478,7 @@ problem_mapping = {
                 "total": 212
             },
             "Python: is_anonymous_letter_constructible.py": {
-                "passed": 0,
+                "passed": 212,
                 "total": 212
             }
         },
@@ -1492,7 +1492,7 @@ problem_mapping = {
                 "total": 101
             },
             "Python: lru_cache.py": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             }
         },
@@ -1534,7 +1534,7 @@ problem_mapping = {
                 "total": 904
             },
             "Python: smallest_subarray_covering_set.py": {
-                "passed": 0,
+                "passed": 904,
                 "total": 904
             }
         },

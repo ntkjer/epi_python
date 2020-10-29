@@ -1,9 +1,14 @@
 from test_framework import generic_test
 
+import collections
 
 def can_form_palindrome(s: str) -> bool:
-    # TODO - you fill in here.
-    return True
+    # A palindormic string can only be formed iff a
+    # char appears odd number of times at most once.
+    #return sum(v % 2 for v in collections.Counter(s).values()) <= 1
+    counter = collections.Counter(s)
+    num_odd = sum(v % 2 for v in counter.values())
+    return num_odd <= 1
 
 
 if __name__ == '__main__':
