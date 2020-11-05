@@ -1620,7 +1620,7 @@ problem_mapping = {
                 "total": 202
             },
             "Python: intersect_sorted_arrays.py": {
-                "passed": 0,
+                "passed": 202,
                 "total": 202
             }
         },
@@ -1634,7 +1634,7 @@ problem_mapping = {
                 "total": 201
             },
             "Python: two_sorted_arrays_merge.py": {
-                "passed": 0,
+                "passed": 201,
                 "total": 201
             }
         },
@@ -1648,7 +1648,7 @@ problem_mapping = {
                 "total": 1001
             },
             "Python: h_index.py": {
-                "passed": 0,
+                "passed": 1001,
                 "total": 1001
             }
         },
@@ -1662,7 +1662,7 @@ problem_mapping = {
                 "total": 202
             },
             "Python: remove_duplicates.py": {
-                "passed": 0,
+                "passed": 202,
                 "total": 202
             }
         },
@@ -1676,7 +1676,7 @@ problem_mapping = {
                 "total": 308
             },
             "Python: smallest_nonconstructible_value.py": {
-                "passed": 0,
+                "passed": 308,
                 "total": 308
             }
         },
@@ -1690,7 +1690,7 @@ problem_mapping = {
                 "total": 97
             },
             "Python: calendar_rendering.py": {
-                "passed": 0,
+                "passed": 97,
                 "total": 97
             }
         },
@@ -1704,7 +1704,7 @@ problem_mapping = {
                 "total": 103
             },
             "Python: interval_add.py": {
-                "passed": 0,
+                "passed": 103,
                 "total": 103
             }
         },
@@ -1718,7 +1718,7 @@ problem_mapping = {
                 "total": 191
             },
             "Python: intervals_union.py": {
-                "passed": 0,
+                "passed": 191,
                 "total": 191
             }
         },
@@ -1732,7 +1732,7 @@ problem_mapping = {
                 "total": 33
             },
             "Python: group_equal_entries.py": {
-                "passed": 0,
+                "passed": 33,
                 "total": 33
             }
         },

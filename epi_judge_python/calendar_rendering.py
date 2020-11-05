@@ -10,8 +10,23 @@ Event = collections.namedtuple('Event', ('start', 'finish'))
 
 
 def find_max_simultaneous_events(A: List[Event]) -> int:
-    # TODO - you fill in here.
-    return 0
+    # Endpoint is a tuple (start_time, 0) or (end_time, 1) so that if times are equal, start_time is first
+    Endpoint = collections.namedtuple('Endpoint', ('time', 'is_start'))
+    E = [
+        p for event in A
+        for p in (Endpoint(event.start, True), Endpoint(event.finish, False))
+    ]
+    # start times before end times.
+    E.sort(key=lambda e: (e.time, not e.is_start))
+    # Track the number of simultaneous events, record the max number of simult events
+    max_num_simultaneous_events, num_simultaneous_events = 0, 0
+    for e in E:
+        if e.is_start:
+            num_simultaneous_events += 1
+            max_num_simultaneous_events = max(max_num_simultaneous_events, num_simultaneous_events)
+        else:
+            num_simultaneous_events -= 1
+    return max_num_simultaneous_events
 
 
 @enable_executor_hook
@@ -19,7 +34,6 @@ def find_max_simultaneous_events_wrapper(executor, events):
     events = [Event(*x) for x in events]
     return executor.run(functools.partial(find_max_simultaneous_events,
                                           events))
-
 
 if __name__ == '__main__':
     exit(
