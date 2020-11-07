@@ -10,6 +10,12 @@ Person = collections.namedtuple('Person', ('age', 'name'))
 
 
 def group_by_age(people: List[Person]) -> None:
+    """
+    O(n) time , O(m) where m is distint num of ages.
+    This groups all people by age, without guaranteeing sorted order
+
+    If sorted property is desired then we can use a BST which is T(n)=O(n + m log m), counting sort.
+    """
     # brute force does too much work
     # people.sort(key=lambda p: p.age)
     age_to_count = collections.Counter((person.age for person in people))
@@ -21,6 +27,7 @@ def group_by_age(people: List[Person]) -> None:
     while age_to_offset:
         from_age = next(iter(age_to_offset))
         from_idx = age_to_offset[from_age]
+        # people[from_idx:to_idx] will hold space for n amount of m ages
         to_age = people[from_idx].age
         to_idx = age_to_offset[people[from_idx].age]
         people[from_idx], people[to_idx] = people[to_idx], people[from_idx]
