@@ -4,7 +4,7 @@ from test_framework import generic_test
 
 
 def n_queens(n: int) -> List[List[int]]:
-    # TODO - you fill in here.
+    
     return []
 
 

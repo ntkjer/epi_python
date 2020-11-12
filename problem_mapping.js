@@ -1846,7 +1846,7 @@ problem_mapping = {
                 "total": 951
             },
             "Python: lowest_common_ancestor_in_bst.py": {
-                "passed": 0,
+                "passed": 951,
                 "total": 951
             }
         },
@@ -1860,7 +1860,7 @@ problem_mapping = {
                 "total": 950
             },
             "Python: bst_from_preorder.py": {
-                "passed": 0,
+                "passed": 950,
                 "total": 950
             }
         },
@@ -1874,7 +1874,7 @@ problem_mapping = {
                 "total": 51
             },
             "Python: minimum_distance_3_sorted_arrays.py": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             }
         },
@@ -1902,7 +1902,7 @@ problem_mapping = {
                 "total": 87
             },
             "Python: bst_from_sorted_array.py": {
-                "passed": 0,
+                "passed": 87,
                 "total": 87
             }
         },
@@ -1916,7 +1916,7 @@ problem_mapping = {
                 "total": 958
             },
             "Python: descendant_and_ancestor_in_bst.py": {
-                "passed": 0,
+                "passed": 958,
                 "total": 958
             }
         },
@@ -1930,7 +1930,7 @@ problem_mapping = {
                 "total": 954
             },
             "Python: range_lookup_in_bst.py": {
-                "passed": 0,
+                "passed": 954,
                 "total": 954
             }
         },
@@ -1944,7 +1944,7 @@ problem_mapping = {
                 "total": 201
             },
             "Python: adding_credits.py": {
-                "passed": 0,
+                "passed": 201,
                 "total": 201
             }
         }
@@ -1960,7 +1960,7 @@ problem_mapping = {
                 "total": 10034
             },
             "Python: euclidean_gcd.py": {
-                "passed": 0,
+                "passed": 10034,
                 "total": 10034
             }
         },
@@ -1974,7 +1974,7 @@ problem_mapping = {
                 "total": 10
             },
             "Python: hanoi.py": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             }
         },
@@ -1988,7 +1988,7 @@ problem_mapping = {
                 "total": 102
             },
             "Python: phone_number_mnemonic.py": {
-                "passed": 0,
+                "passed": 102,
                 "total": 102
             }
         },
