@@ -1,6 +1,7 @@
 import copy
 import functools
 import math
+import itertools
 from typing import List
 
 from test_framework import generic_test
@@ -9,9 +10,54 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def solve_sudoku(partial_assignment: List[List[int]]) -> bool:
-    # TODO - you fill in here.
-    return True
+    def find_unassigned():
+        for row in range(9):
+            for col in range(9):
+                if partial_assignment[row][col] == 0:
+                    return row, col
+        return -1, -1
 
+    def safe_to_place(row, col, val) -> bool:
+        box_row = row - row % 3
+        box_col = col - col % 3
+        if check_col(col, val) and check_row(row, val) and check_square(box_row, box_col, val):
+            return True
+        return False
+
+    def check_col(col, val):
+        for row in range(9):
+            if partial_assignment[row][col] == val:
+                return False
+        return True
+
+    def check_row(row, val):
+        for col in range(9):
+            if partial_assignment[row][col] == val:
+                return False
+        return True
+
+    def check_square(row, col, val):
+        for r in range(row, row + 3):
+            for c in range(col, col + 3):
+                if partial_assignment[r][c] == val:
+                    return False
+        return True
+
+    def solved():
+        row, col = find_unassigned()
+        if row is -1 and col is -1:
+            return True
+
+        candidates = [i for i in range(1, 10)]
+        for candidate in candidates:
+            if safe_to_place(row, col, candidate):
+                partial_assignment[row][col] = candidate
+                if solved():
+                    return True
+                partial_assignment[row][col] = 0
+        return False
+
+    return solved()
 
 def assert_unique_seq(seq):
     seen = set()

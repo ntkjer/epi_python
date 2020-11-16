@@ -4,8 +4,16 @@ from test_framework import generic_test
 
 
 def palindrome_decompositions(text: str) -> List[List[str]]:
-    # TODO - you fill in here.
-    return []
+    def directed_decomps(offset=0, partial_partition=[]):
+        if offset == len(text):
+            result.append(partial_partition.copy())
+        for i in range(offset + 1, len(text) + 1):
+            prefix = text[offset:i]
+            if prefix == prefix[::-1]:
+                directed_decomps(i, partial_partition + [prefix])
+    result: List[List[int]] = []
+    directed_decomps()
+    return result
 
 
 def comp(a, b):
