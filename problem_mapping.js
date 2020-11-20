@@ -2114,7 +2114,7 @@ problem_mapping = {
                 "total": 10
             },
             "Python: gray_code.py": {
-                "passed": 0,
+                "passed": 1,
                 "total": 10
             }
         }
@@ -2142,7 +2142,7 @@ problem_mapping = {
                 "total": 46
             },
             "Python: max_sum_subarray.py": {
-                "passed": 0,
+                "passed": 1001,
                 "total": 1001
             }
         },
