@@ -2198,7 +2198,7 @@ problem_mapping = {
                 "total": 5906
             },
             "Python: binomial_coefficients.py": {
-                "passed": 0,
+                "passed": 5906,
                 "total": 5906
             }
         },
@@ -2212,7 +2212,7 @@ problem_mapping = {
                 "total": 186
             },
             "Python: is_string_in_matrix.py": {
-                "passed": 0,
+                "passed": 186,
                 "total": 186
             }
         },

@@ -1,9 +1,14 @@
 from test_framework import generic_test
 
+import functools
 
+@functools.lru_cache(None)
 def compute_binomial_coefficient(n: int, k: int) -> int:
-    # TODO - you fill in here.
-    return 0
+    if k in (0, n):
+        return 1
+    without_k = compute_binomial_coefficient(n - 1, k)
+    with_k = compute_binomial_coefficient(n - 1, k - 1)
+    return without_k + with_k
 
 
 if __name__ == '__main__':
