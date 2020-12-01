@@ -7,10 +7,11 @@ from test_framework.test_utils import enable_executor_hook
 
 Item = collections.namedtuple('Item', ('weight', 'value'))
 
-def optimum_subject_to_capacity(items: List[Item], capacity: int) -> int:
+def optimum_subject_to_capacity_iter(items: List[Item], capacity: int) -> int:
+    dp = [[0 for _ in range(capacity + 1)] for _ in range(len(items))]
     return
 
-def optimum_subject_to_capacity_memoize(items: List[Item], capacity: int) -> int:
+def optimum_subject_to_capacity(items: List[Item], capacity: int) -> int:
     # DP[i, j] = max(DP[i + 1,
     #                vi + DP[i + 1, j − Si])
     # dp = [[0 for item in range(len(items) + 1)]
@@ -20,12 +21,12 @@ def optimum_subject_to_capacity_memoize(items: List[Item], capacity: int) -> int
         if k < 0:
             return 0
         without_curr_item = optimum_subject_to_item_and_cap(k - 1, available_capacity)
-
         curr_weight = items[k].weight
         if available_capacity < curr_weight:
             with_curr_item = 0
         else:
-            with_curr_item = items[k].value + optimum_subject_to_item_and_cap(k - 1, available_capacity - curr_weight)
+            with_curr_item = items[k].value + optimum_subject_to_item_and_cap(k - 1,
+                                                                              available_capacity - curr_weight)
         return max(with_curr_item, without_curr_item)
 
     return optimum_subject_to_item_and_cap(len(items) - 1, capacity)
