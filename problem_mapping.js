@@ -2254,7 +2254,7 @@ problem_mapping = {
                 "total": 101
             },
             "Python: minimum_weight_path_in_a_triangle.py": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             }
         },
