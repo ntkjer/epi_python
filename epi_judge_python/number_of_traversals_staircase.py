@@ -2,8 +2,16 @@ from test_framework import generic_test
 
 
 def number_of_ways_to_top(top: int, maximum_step: int) -> int:
-    # TODO - you fill in here.
-    return 0
+    def compute_num_ways_to_h(h):
+        if h <= 1:
+            return 1
+
+        return sum(compute_num_ways_to_h(h - i)
+                   for i in range(1, min(maximum_step, h) + 1))
+
+    return compute_num_ways_to_h(top)
+
+
 
 
 if __name__ == '__main__':
