@@ -19,6 +19,25 @@ def minimum_path_weight(triangle: List[List[int]]) -> int:
     if not triangle:
         return 0
 
+    memo = {}
+
+    def recur_min_path(i, j):
+        if (i, j) in memo:
+            return memo[i, j]
+
+        if j == len(triangle):
+            return 0
+        curr_min_weight = triangle[j][i] + min(recur_min_path(i, j + 1), recur_min_path(i + 1, j + 1))
+        memo[i, j] = curr_min_weight
+        return memo[i, j]
+
+    return recur_min_path(0, 0)
+
+
+def minimum_path_weight_iter(triangle: List[List[int]]) -> int:
+    if not triangle:
+        return 0
+
     res = [[0 for i in range(len(row))] for row in triangle]
     res[0][0] = triangle[0][0]
     for i in range(1, len(triangle)):

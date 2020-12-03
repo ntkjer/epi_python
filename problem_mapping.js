@@ -2296,7 +2296,7 @@ problem_mapping = {
                 "total": 102
             },
             "Python: pretty_printing.py": {
-                "passed": 0,
+                "passed": 102,
                 "total": 102
             }
         },

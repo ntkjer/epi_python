@@ -4,7 +4,7 @@ from test_framework import generic_test
 
 
 def longest_nondecreasing_subsequence_length(A: List[int]) -> int:
-    # TODO - you fill in here.
+    print (A)
     return 0
 
 
