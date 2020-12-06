@@ -2380,7 +2380,7 @@ problem_mapping = {
                 "total": 103
             },
             "Python: two_sum.py": {
-                "passed": 0,
+                "passed": 1005,
                 "total": 1005
             }
         },
@@ -2394,7 +2394,7 @@ problem_mapping = {
                 "total": 1008
             },
             "Python: three_sum.py": {
-                "passed": 0,
+                "passed": 1008,
                 "total": 1008
             }
         },
@@ -2408,7 +2408,7 @@ problem_mapping = {
                 "total": 201
             },
             "Python: majority_element.py": {
-                "passed": 0,
+                "passed": 201,
                 "total": 201
             }
         },

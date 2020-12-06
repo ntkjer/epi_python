@@ -2,10 +2,28 @@ from typing import Iterator
 
 from test_framework import generic_test
 
-
 def majority_search(stream: Iterator[str]) -> str:
-    # TODO - you fill in here.
-    return ''
+    candidate_count = 0
+    candidate = None
+    for it in stream:
+        if candidate_count == 0:
+            candidate = it
+            candidate_count += 1
+        elif candidate == it:
+            candidate_count += 1
+        else:
+            candidate_count -= 1
+    return candidate
+
+
+def majority_search_bruteforce(stream: Iterator[str]) -> str:
+    seen = {}
+    for num in stream:
+        if num in seen:
+            seen[num] += 1
+        else:
+            seen[num] = 1
+    return max(seen, key=seen.get)
 
 
 def majority_search_wrapper(stream):
