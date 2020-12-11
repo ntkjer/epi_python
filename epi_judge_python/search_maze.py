@@ -14,8 +14,30 @@ Coordinate = collections.namedtuple('Coordinate', ('x', 'y'))
 
 def search_maze(maze: List[List[int]], s: Coordinate,
                 e: Coordinate) -> List[Coordinate]:
-    # TODO - you fill in here.
-    return []
+    # can s reach e?
+    m, n = len(maze), len(maze[-1])
+
+    def dfs(curr, visited=set()):
+        path.append(curr)
+        if curr == e:
+            return True
+
+        adjacent_paths = [Coordinate(curr.x - 1, curr.y),
+                          Coordinate(curr.x + 1, curr.y),
+                          Coordinate(curr.x, curr.y + 1),
+                          Coordinate(curr.x, curr.y - 1)]
+
+        for adj in adjacent_paths:
+            if (0 <= adj.x < m and 0 <= adj.y < n and maze[adj.x][adj.y] == WHITE):
+                if adj not in visited:
+                    visited.add(adj)
+                    if dfs(adj):
+                        return True
+        del path[-1]
+
+    path = []
+    dfs(s)
+    return path
 
 
 def path_element_is_feasible(maze, prev, cur):
