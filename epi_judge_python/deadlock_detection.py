@@ -4,15 +4,35 @@ from typing import List
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
 
-
 class GraphVertex:
+
+    WHITE, GRAY, BLACK = range(3)
+
     def __init__(self) -> None:
+        self.color = self.WHITE
         self.edges: List['GraphVertex'] = []
 
 
 def is_deadlocked(graph: List[GraphVertex]) -> bool:
-    # TODO - you fill in here.
-    return True
+
+    def has_cycle(cur):
+        if cur.color == GraphVertex.GRAY:
+            return True
+
+        cur.color = GraphVertex.GRAY # mark
+
+        for adj in cur.edges:
+            if adj.color != GraphVertex.BLACK and has_cycle(adj):
+                return True
+
+        cur.color = GraphVertex.BLACK
+        return False
+
+    for vertex in graph:
+        if vertex.color is GraphVertex.WHITE and has_cycle(vertex):
+            return True
+
+    return False
 
 
 @enable_executor_hook

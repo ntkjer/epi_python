@@ -12,8 +12,19 @@ class GraphVertex:
 
 
 def clone_graph(graph: GraphVertex) -> GraphVertex:
-    # TODO - you fill in here.
-    return GraphVertex(0)
+    if graph is None:
+        return None
+
+    vertex_map = {graph:  GraphVertex(graph.label)}
+    q = [graph]
+    while q:
+        v = q.pop()
+        for e in v.edges:
+            if e not in vertex_map:
+                vertex_map[e] = GraphVertex(e.label)
+                q.append(e)
+            vertex_map[v].edges.append(vertex_map[e])
+    return vertex_map[graph]
 
 
 def copy_labels(edges):

@@ -12,8 +12,19 @@ class GraphVertex:
 
 
 def is_any_placement_feasible(graph: List[GraphVertex]) -> bool:
-    # TODO - you fill in here.
-    return True
+    def bfs(source):
+        source.d = 0
+        stack = [source]
+        while stack:
+            s = stack.pop(0)
+            for v in s.edges:
+                if v.d == - 1: # unvisited
+                    v.d = s.d + 1
+                    stack.append(v)
+                elif v.d == s.d:
+                    return False
+        return True
+    return all(bfs(v) for v in graph if v.d == -1)
 
 
 @enable_executor_hook
