@@ -13,12 +13,15 @@ class Team:
     def __init__(self, height: List[int]) -> None:
         self._players = [Team.Player(h) for h in height]
 
-    # Checks if team0 can be placed in front of team1.
     @staticmethod
     def valid_placement_exists(team0: 'Team', team1: 'Team') -> bool:
-        return all(
-            a < b for a, b in zip(sorted(team0._players), sorted(team1._players))
-        )
+        for elem in (a < b for a, b in zip(sorted(team0._players), sorted(team1._players))):
+            if not elem:
+                return False
+        return True
+        # return all(
+        #     a < b for a, b in zip(sorted(team0._players), sorted(team1._players))
+        # )
 
 
 

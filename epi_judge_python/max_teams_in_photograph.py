@@ -13,7 +13,10 @@ class GraphVertex:
 
 
 def find_largest_number_teams(graph: List[GraphVertex]) -> int:
-    # TODO - you fill in here.
+    # find largest number of teams we can photograph?
+    # team A(h) = [1, 2, 4, 5]
+    # team B(h) = [1, 2, 3, 4]
+
     return 0
 
 
